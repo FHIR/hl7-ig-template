@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="ProcessIg" basedir=".">
-  <property name="dir.temp.includes" value="${ig.temp}/_includes"/>
-  <property name="dir.template.includes" value="${ig.template}/includes"/>
-  <property name="dir.input" value="input"/>
   <target name="onLoad">
+    <property name="dir.temp.includes" value="${ig.temp}/_includes"/>
+    <property name="dir.template.includes" value="${ig.template}/includes"/>
+    <property name="dir.input" value="input"/>
     <!-- Look in all input folders that might contain spreadsheets and capture the list of spreadsheet XML files as a property -->
     <fileset id="spreadsheet.contents.id" dir=".">
       <include name="${dir.input}/examples/*spreadsheet.xml"/>
