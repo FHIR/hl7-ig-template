@@ -25,11 +25,11 @@
     <copy todir="${dir.temp.includes}">
       <fileset dir="${dir.template.includes}" includes="*"/>
     </copy>
-    <xslt basedir="${dir.input}/includes" includes="*.xml" destdir="${dir.includes}" extension=".xml" style="${ig.scripts}/processPages.xslt"/>
-    <xslt basedir="${dir.input}/pagecontent" includes="*.xml" destdir="${dir.includes}" extension=".xml" style="${ig.scripts}/processPages.xslt"/>
-    <xslt in="${onGenerate.ig.source}xml" out="${dir.includes}/artifacts.xml" style="${ig.scripts}/createArtifactSummary.xslt"/>
+    <xslt basedir="${dir.input}/includes" includes="*.xml" destdir="${dir.temp.includes}" extension=".xml" style="${ig.scripts}/processPages.xslt"/>
+    <xslt basedir="${dir.input}/pagecontent" includes="*.xml" destdir="${dir.temp.includes}" extension=".xml" style="${ig.scripts}/processPages.xslt"/>
+    <xslt in="${onGenerate.ig.source}xml" out="${dir.temp.includes}/artifacts.xml" style="${ig.scripts}/createArtifactSummary.xslt"/>
     <fileset id="onGenerate.files.id" dir=".">
-      <include name="${dir.includes}/artifacts.xml"/>
+      <include name="${dir.temp.includes}/artifacts.xml"/>
     </fileset>
     <property name="onGenerate.files" refid="onGenerate.files.id"/>
   </target>
