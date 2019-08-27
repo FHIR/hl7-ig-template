@@ -2,9 +2,7 @@
 	"script": "scripts/ant.xml",
 	"targets": {
 		"onLoad": "onLoad",
-		"onGenerate": "onGenerate",
-		"onJekyll": "onJekyll",
-		"onCheck": "onCheck"
+		"onGenerate": "onGenerate"
 	},
 	"_extraTemplates-documentation": "This array of objects identifies additional templates available for generation for different resource types",
   "extraTemplates": [

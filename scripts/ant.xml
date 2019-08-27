@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="ProcessIg" basedir=".">
   <target name="onLoad">
-    <property name="dir.temp.includes" value="${ig.temp}/_includes"/>
-    <property name="dir.template.includes" value="${ig.template}/includes"/>
     <property name="dir.input" value="input"/>
     <!-- Look in all input folders that might contain spreadsheets and capture the list of spreadsheet XML files as a property -->
     <fileset id="spreadsheet.contents.id" dir=".">
@@ -21,6 +19,8 @@
     </xslt>
   </target>
   <target name="onGenerate">
+    <property name="dir.temp.includes" value="${ig.temp}/_includes" relative="yes"/>
+    <property name="dir.template.includes" value="${ig.template}/includes" relative="yes"/>
     <xslt in="${onGenerate.ig.source}xml" out="${onGenerate.ig.dest}xml" style="${ig.scripts}/onGenerate.xslt"/>
     <copy todir="${dir.temp.includes}">
       <fileset dir="${dir.template.includes}" includes="*"/>
