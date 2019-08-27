@@ -16,7 +16,7 @@
         </xsl:call-template>
       </xsl:if>
       <xsl:apply-templates select="f:modifierExtension"/>
-      <xsl:apply-templates select="f:url|f:version|f:name|f:title|f:status|f:experimental|f:date|f:publisher|f:contact|f:description|f:useContext|f:jurisdiction|f:copyright|f:packageId"/>
+      <xsl:apply-templates select="f:url|f:version|f:name|f:title|f:status|f:experimental|f:date|f:publisher|f:contact|f:description|f:useContext|f:jurisdiction|f:copyright|f:packageId|f:license"/>
       <xsl:if test="not(f:license)">
         <license xmlns="http://hl7.org/fhir" value="CC0-1.0"/>
       </xsl:if>
