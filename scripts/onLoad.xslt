@@ -131,7 +131,7 @@
     </xsl:call-template>
     <xsl:call-template name="setParameter">
       <xsl:with-param name="code" select="'path-tx-cache'"/>
-      <xsl:with-param name="value" select="'input-generated/txcache'"/>
+      <xsl:with-param name="value" select="'input-cache/txcache'"/>
     </xsl:call-template>
     <xsl:call-template name="setParameter">
       <xsl:with-param name="code" select="'path-suppressed-warnings'"/>
