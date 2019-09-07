@@ -44,7 +44,7 @@
         <page xmlns="http://hl7.org/fhir">
           <nameUrl value="{f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']/f:valueUri/@value}"/>
           <title value="{f:name/@value}"/>
-          <generation value="html"/>
+          <generation value="generated"/>
         </page>      
       </xsl:for-each>
     </xsl:for-each>
