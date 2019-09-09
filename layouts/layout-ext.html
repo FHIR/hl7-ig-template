@@ -4,6 +4,7 @@
 {% assign excludexml = site.data.info.excludexml | downcase | slice: 0 %}
 {% assign excludejson = site.data.info.excludejson | downcase | slice: 0 %}
 {% assign excludettl = site.data.info.excludettl | downcase | slice: 0 %}
+{% assign excludemaps = site.data.info.excludemap | downcase | slice: 0 %}
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
   <ul class="nav nav-tabs">
@@ -13,9 +14,11 @@
     <li>
       <a href="extension-{{[id]}}-definitions.html">Detailed Descriptions</a>
     </li>
+{% unless excludemaps == 'y' %}
     <li>
       <a href="extension-{{[id]}}-mappings.html">Mappings</a>
     </li>
+{% endunless %}
 {% unless excludexml == 'y' %}
     <li>
       <a href="extension-{{[id]}}.profile.xml.html">XML</a>

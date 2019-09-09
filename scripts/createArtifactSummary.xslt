@@ -41,12 +41,19 @@
     <p>
       <table>
         <tbody>
-          <xsl:for-each select="f:resource[not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $version) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$version)]
-          |parent::f:definition/f:resource[f:package/@value=current()/@id or f:groupingId/@value=current()/@id][not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $version) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$version)]">
+          <xsl:for-each select="parent::f:definition/f:resource[f:groupingId/@value=current()/@id]">
             <tr>
               <td style="column-width:30%">
-                <a href="{f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']/f:valueUri/@value}">
-                  &#160;&#160;&#x2022;&#160;&#160;<xsl:value-of select="f:name/@value"/>
+                <a href="{f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']/f:valueUri/@value}" title="{f:reference/f:reference/@value}">
+                  <xsl:text>&#160;&#160;&#x2022;&#160;&#160;</xsl:text>
+                  <xsl:choose>
+                    <xsl:when test="f:name">
+                      <xsl:value-of select="f:name/@value"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="f:reference/f:reference/@value"/>
+                    </xsl:otherwise>
+                  </xsl:choose>
                 </a>
               </td>
               <td>

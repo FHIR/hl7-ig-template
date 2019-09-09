@@ -77,6 +77,12 @@
     </xsl:copy>
   </xsl:template>
   <xsl:template name="addParameters">
+    <xsl:if test="not(f:resource)">
+      <xsl:call-template name="setParameter">
+        <xsl:with-param name="code" select="'autoload-resources'"/>
+        <xsl:with-param name="value" select="'true'"/>
+      </xsl:call-template>
+    </xsl:if>
     <xsl:call-template name="setParameter">
       <xsl:with-param name="code" select="'path-resource'"/>
       <xsl:with-param name="value" select="'input/capabilities'"/>

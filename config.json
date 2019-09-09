@@ -44,15 +44,15 @@
 		"_documentation": "this object contains the default publishing policy for different types. Anything not mentioned defaults to true",
 		"Any": {
 			"java": false,
-			"template-base": "template/templates/template-instance-base.html",
-			"template-format": "template/templates/template-instance-format.html",
+			"template-base": "template/layouts/layout-instance-base.html",
+			"template-format": "template/layouts/layout-instance-format.html",
 			"base": "{{[id]}}.html",
 			"format": "{{[id]}}.{{[fmt]}}.html"
 		},
 		"example": {
 			"java": false,
-      "template-base": "template/templates/template-instance-base.html",
-      "template-format": "template/templates/template-instance-format.html",
+      "template-base": "template/layouts/layout-instance-base.html",
+      "template-format": "template/layouts/layout-instance-format.html",
         "base": "{{[id]}}.html",
         "format": "{{[id]}}.{{[fmt]}}.html"
 		},
@@ -61,13 +61,13 @@
 			"template-format": ""
 		},
 		"StructureDefinition:extension": {
-      "template-base": "template/templates/template-ext.html",
-      "template-defns": "template/templates/template-ext-definitions.html",
-      "template-mappings": "template/templates/template-ext-mappings.html",
+      "template-base": "template/layouts/layout-ext.html",
+      "template-defns": "template/layouts/layout-ext-definitions.html",
+      "template-mappings": "template/layouts/layout-ext-mappings.html",
       "template-examples": "",
-      "template-profile-xml": "template/templates/template-ext-xml.html",
-      "template-profile-json": "template/templates/template-ext-json.html",
-      "template-profile-ttl": "template/templates/template-ext-ttl.html",
+      "template-profile-xml": "template/layouts/layout-ext-xml.html",
+      "template-profile-json": "template/layouts/layout-ext-json.html",
+      "template-profile-ttl": "template/layouts/layout-ext-ttl.html",
       "template-format": "",
       "base": "extension-{{[id]}}.html",
       "defns": "extension-{{[id]}}-definitions.html",
@@ -78,13 +78,13 @@
       "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
 		},
 		"StructureDefinition": {
-			"template-base": "template/templates/template-profile.html",
-			"template-defns": "template/templates/template-profile-definitions.html",
-			"template-mappings": "template/templates/template-profile-mappings.html",
-			"template-examples": "template/templates/template-profile-examples.html",
-			"template-profile-xml": "template/templates/template-profile-xml.html",
-			"template-profile-json": "template/templates/template-profile-json.html",
-			"template-profile-ttl": "template/templates/template-profile-ttl.html",
+			"template-base": "template/layouts/layout-profile.html",
+			"template-defns": "template/layouts/layout-profile-definitions.html",
+			"template-mappings": "template/layouts/layout-profile-mappings.html",
+			"template-examples": "template/layouts/layout-profile-examples.html",
+			"template-profile-xml": "template/layouts/layout-profile-xml.html",
+			"template-profile-json": "template/layouts/layout-profile-json.html",
+			"template-profile-ttl": "template/layouts/layout-profile-ttl.html",
 			"base": "{{[id]}}.html",
 			"defns": "{{[id]}}-definitions.html",
 			"mappings": "{{[id]}}-mappings.html",
@@ -94,8 +94,8 @@
 			"profile-ttl": "{{[id]}}.profile.ttl.html"
 		},
 		"ValueSet": {
-			"template-base": "template/templates/template-valueset.html",
-			"template-format": "template/templates/template-valueset-format.html",
+			"template-base": "template/layouts/layout-valueset.html",
+			"template-format": "template/layouts/layout-valueset-format.html",
 			"base": "valueset-{{[id]}}.html",
 			"format": "valueset-{{[id]}}.{{[fmt]}}.html"
 		}
