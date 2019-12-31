@@ -2533,7 +2533,7 @@ button.close {
   right: 0;
 }
 .navbar-inverse {
-  background-color: #404080;
+  background-color: #2E1A47;
 }
 .navbar-inverse .navbar-brand {
   color: #e6e6e6;
@@ -2558,7 +2558,7 @@ button.close {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #6060A0;
+  background-color: #753BBD;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -2579,7 +2579,7 @@ button.close {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #6060A0;
+  background-color: #753BBD;
   color: #ffffff;
 }
 .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
