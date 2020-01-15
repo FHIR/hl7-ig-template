@@ -102,5 +102,5 @@ add globals too
 - rethink the folder names and file tree it should mirror the ig page structure and use html source file name conventions. (pick one)
 - frame needs an example list generator, copy-me.html, examplebuttons, schematron-list-generator, img formatters, and a toc-generator
 - assumes need front matter for Jekyll based publishing
-- generate the ig.xml outside the framework using python script - publish on web for easy access.
+- generate the ig.xml, and package.json and possibly config.json outside the framework using python scripts - publish on web for easy access.
 - assume no ant script for now.
