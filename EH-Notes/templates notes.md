@@ -1,29 +1,19 @@
-- use this for ig.ini file
-    ~~~
-    [IG]
-    ig = input/sdc.xml
-    template = hl7.fhir.template  (loads the templates from repo)
-    usage-stats-opt-out = false
-    ~~~
-    
-template = hl7.fhir.template  (loads the templates from repo)
-template = /Users/ehaas/Documents/FHIR/IG-Template2/template  runs local template (eg after load)
-
 -  to run add to jar this option  -ig.ini
 
-   - see bash script to run without fetching template each time.
-   - also need all the stuff in ig.ini from properties.txt to run
-      - why not already set up in ig.ini or better yet load from yaml, csv or json
-      - what about dependencies? are we just redoing ig.json here.
-      - need a way to incorporate all this into ig resource
-- see sdc for example how to run
-- why do I need a `ignoreWarnings.txt` if I don't want to ignore any  - dafault to none if not there
-- what is :  `properties.txt` ? is this for _config.yml?
-- why is toc the root and not index.xhtml
+  - template = hl7.fhir.template  (loads the templates from repo)
+  - template = /Users/ehaas/Documents/FHIR/IG-Template2/template  (loads the templates from local directory)
+  - template (eg after load)
 
-    ```
+   - see bash script to run without fetching template each time.
+- also need all the stuff in ig.ini from properties.txt to run
+
+    ~~~
+    [IG]
+    ig = input/ig.xml
+    template = /Users/ehaas/Documents/FHIR/IG-Template2/template
+    usage-stats-opt-out = false
     #guidename must match the id of the implementation guide
-    guidename=test
+    guidename=healthedatainc.ig-template2-0.0.0
     copyrightyear=2015+
     license=CC0-1.0
     version=0.0.0
@@ -32,14 +22,47 @@ template = /Users/ehaas/Documents/FHIR/IG-Template2/template  runs local templat
     #excludexml=Yes
     #excludejson=No
     #excludettl=Yes
-    ```
+    ~~~
+    - why not already set up in ig.ini or better yet load from yaml, csv or json
+    - what about dependencies? are we just redoing ig.json here.
+    - need a way to incorporate all this into ig resource
+    - what is :  `properties.txt` ? is this for _config.yml?
+
+  - what is properties.txt?
+
+      ```
+      #guidename must match the id of the implementation guide
+      guidename=test
+      copyrightyear=2015+
+      license=CC0-1.0
+      version=0.0.0
+      ballotstatus=CI Build
+      fhirspec=http://build.fhir.org/
+      #excludexml=Yes
+      #excludejson=No
+      #excludettl=Yes
+      ```
+
+- config.yml looks like this for now:
+
+    ~~~
+    kramdown:
+      toc_levels:    1..3
+    ~~~
+     - need to add a whole bunch of stuff to my templates work
+     - also option for site variables
+
+- why do I need a `ignoreWarnings.txt` if I don't want to ignore any  - default to none if not there
+- why is toc the root and not index.xhtml
+- fix so can add images in markdown using bootstrap classes
+
 need to add extension for spreadsheets to ig.xml file
 
 - do I need a license file or is that a git hub thing?
 - I don't think I need the .bat files since I use bash
 - what do the transforms do?  Do they do the same as the layouts?
 - need to add a url path to examples and resources so not bound to id name - extension?
-- needed to add depends on to ig.xml this causes an error
+- needed to add dependencies to ig.xml this causes an error?
 
 ~~~
 <dependsOn>  <!-- 0..* Another Implementation guide this depends on -->
@@ -78,4 +101,6 @@ add globals too
 - need layouts to avoid needless repetition in the templates
 - rethink the folder names and file tree it should mirror the ig page structure and use html source file name conventions. (pick one)
 - frame needs an example list generator, copy-me.html, examplebuttons, schematron-list-generator, img formatters, and a toc-generator
-- assume no front matter
+- assumes need front matter for Jekyll based publishing
+- generate the ig.xml outside the framework using python script - publish on web for easy access.
+- assume no ant script for now.
