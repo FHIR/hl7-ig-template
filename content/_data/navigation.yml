@@ -1,0 +1,33 @@
+- title: Home
+  url: index.html
+- title: General Guidance
+  url: guidance.html
+- title: More General Guidance
+  url: more-guidance.html
+- title: FHIR Artifacts
+  url: "#"
+  sublinks:
+    - title: Profiles and Extensions
+      url: profiles.html
+    #- title: Extensions
+      #url: extensions.html
+    #- title: Logical Models
+      #url: profiles.html
+    #- title: StructureMaps
+      #url: structuremaps.html
+    - title: Search Parameters
+      url: searchparameters.html
+    - title: Operations
+      url: operations.html
+    - title: Terminology
+      url: terminology.html
+    - title: Search Parameters
+      url: searchparameters.html
+    - title: CapabilityStatements
+      url: capstatements.html
+- title: Security
+  url: security.html
+- title: Examples
+  url: all-examples.html
+- title: Downloads
+  url: downloads.html

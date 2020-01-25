@@ -12,7 +12,7 @@ breadcrumb vs history what is a breadcrumb hiearchy or history?
 gray-color thingy
 
 widget-row vs thumbs vs joyo-thumbs
-shortcode for 
+shortcode for
 - Fontawesome
 - Accordion
 - Notifications
@@ -2346,11 +2346,11 @@ button.close {
   display: block;
 }
 .nav .caret {
-  border-top-color: #428bca;
+  border-top-color: #f5f5f5;
   border-bottom-color: #428bca;
 }
 .nav a:hover .caret {
-  border-top-color: #2a6496;
+  border-top-color: #f5f5f5;
   border-bottom-color: #2a6496;
 }
 .nav-tabs .dropdown-menu {
@@ -2533,7 +2533,7 @@ button.close {
   right: 0;
 }
 .navbar-inverse {
-  background-color: #ad1f2f;
+  background-color: #707070;
 }
 .navbar-inverse .navbar-brand {
   color: #e6e6e6;
@@ -2552,7 +2552,7 @@ button.close {
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
   color: #ffffff;
-  background-color: #790713;
+  background-color: #000000;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
@@ -4061,6 +4061,9 @@ td.visible-print {
   display: none !important;
 }
 @media print {
+  .collapse {
+        display: block !important;
+  }
   .visible-print {
     display: block !important;
   }
@@ -5260,7 +5263,7 @@ p {
   padding-bottom: 5px;
 }
 /*
-//@import "joyo-widgets.less";	
+//@import "joyo-widgets.less";
 //@import "joyo-wordpress.less";
 */
 .clearfix:before,

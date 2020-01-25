@@ -1,0 +1,78 @@
+<div id="segment-navbar" class="segment">
+  <!-- segment-navbar -->
+  <div id="stripe">
+  </div>
+  <div class="container">
+    <!-- container -->
+    <!-- HEADER CONTENT -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+        </button>
+        <a class="navbar-brand hidden" href="{{ site.data.fhir.path }}index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+{% comment %}
+       {% capture my-include %}{% include menu.md %}{% endcapture %}{{ my-include | markdownify }}
+{% endcomment %}
+
+<!-- ***** Menu bar  content based on the used defined navigation.yml input ******-->
+
+           <ul class="nav navbar-nav">
+               {% assign links = site.data.navigation %}
+               {% if site.data.ig_navigation %}
+               {% assign links = site.data.ig_navigation %}
+               {% endif %}
+               {% for link in links %}
+                   {% assign class = nil %}
+                   {% if page.url contains link.url %}
+                       {% assign class = 'active' %}
+                   {% elsif page.path contains 'index' and link.url contains 'index' %}
+                       {% assign class = 'active' %}
+                   {% endif %}
+                   {% if link.sublinks %}
+                   {% for sublink in link.sublinks %}
+                   {% if page.url contains sublink.url %}
+                       {% assign class = 'active' %}
+                   {% endif %}
+                   {% endfor %}
+                       <li class="dropdown {{ class }}">
+                           <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ link.title }} <span class="caret"></span></a>
+                           <ul class="dropdown-menu">
+                               {% for sublink in link.sublinks %}
+                                   {% if sublink.title == 'separator' %}
+                                       <li role="separator" class="divider"></li>
+                                   {% else %}
+                                       <li>
+                                           <a href="{{ site.url }}{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
+                                       </li>
+                                   {% endif %}
+                               {% endfor %}
+                           </ul>
+                       </li>
+                   {% else %}
+                       <li class="{{ class }}">
+                           <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+                       </li>
+                   {% endif %}
+               {% endfor %}
+           </ul>
+
+<!-- ***** Menu bar content ******-->
+
+      </div>
+      <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- /.navbar -->
+  <!-- /HEADER CONTENT -->
+</div>
+<!-- /container -->
+</div>
+<!-- /segment-navbar -->
