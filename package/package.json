@@ -1,6 +1,6 @@
 {
   "name": "ihe.fhir.template",
-  "version": "0.0.2",
+  "version": "current",
   "type": "fhir.template",
   "license": "CC0-1.0",
   "description": "FHIR Test Template",
