@@ -5,5 +5,5 @@
   "license": "CC0-1.0",
   "description": "FHIR Test Template",
   "author": "http://hl7.org/fhir",
-  "canonical": "http://github.com/IHE/ihe-fhir-template"
+  "canonical": "http://fhir.org/templates/ihe.fhir.template"
 }
