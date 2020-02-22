@@ -12,6 +12,13 @@
       "current" : true
     },
     {
+      "version" : "0.1.0",
+      "desc" : "22-2-2020 - based on base template",
+      "path" : "https://build.fhir.org/ig/IHE/ihe-ig-template/0.1.0",
+      "status" : "ci-build",
+      "current" : true
+    },
+    {
       "version" : "0.0.2",
       "date" : "2020-02-05",
       "desc" : "First Release",

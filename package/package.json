@@ -1,9 +1,13 @@
-﻿{
+{
   "name": "ihe.fhir.template",
+  "version": "0.1.0",
   "type": "fhir.template",
   "license": "CC0-1.0",
-  "description": "FHIR Test Template",
-  "author": "http://hl7.org/fhir",
+  "description": "IHE FHIR Template",
+  "author": "http://ihe.net",
   "canonical": "http://fhir.org/templates/ihe.fhir.template",
-  "version": "0.0.2"
+  "base":  "fhir.base.template",
+  "dependencies": {
+    "fhir.base.template": "current"
+  }
 }

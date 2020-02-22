@@ -7,9 +7,9 @@
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
-  
+
     <link href="{{site.data.info.assets}}fhir.css" rel="stylesheet"/>
-      
+     
     <!-- Bootstrap core CSS -->
     <link href="{{site.data.info.assets}}assets/css/bootstrap.css" rel="stylesheet"/>
     <link href="{{site.data.info.assets}}assets/css/bootstrap-fhir.css" rel="stylesheet"/>
@@ -18,7 +18,10 @@
     <link href="{{site.data.info.assets}}assets/css/project.css" rel="stylesheet"/>
     <link href="{{site.data.info.assets}}assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="{{site.data.info.assets}}assets/css/jquery-ui.css" rel="stylesheet"/>
-  
+    {% include fragment-css.html %}
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
@@ -30,7 +33,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{site.data.info.assets}}assets/ico/apple-touch-icon-114-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{site.data.info.assets}}assets/ico/apple-touch-icon-72-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" href="{{site.data.info.assets}}assets/ico/apple-touch-icon-57-precomposed.png"/>
-    <link rel="shortcut icon" href="{{site.data.info.assets}}assets/ico/favicon.png"/>  
+    <link rel="shortcut icon" href="{{site.data.info.assets}}assets/ico/favicon.png"/>
   </head>
   <body>
 {% if site.data.info.ballotstatus != '' %}
@@ -43,18 +46,13 @@
     h3,h4,h5,h6{--heading-prefix:"{{site.data.info.headingOffset}}{{site.data.pages[page.path].label}}"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
-        <div id="hl7-nav">
-          <a id="ihe-logo" no-external="true" href="{{site.data.fhir.path}}">
-            <img height="50" alt="Visit the IHE website" src="{{site.data.info.assets}}assets/images/ihe-fhir-logo-www.png"/>
-          </a>
-        </div>
-        <div id="fhir-nav">
-          <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="{{site.data.info.assets}}assets/images/ihe-logo.png"/> </a>
-        </div>
-        <div id="hl7-search">
-          <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="{{site.data.info.assets}}assets/images/search.png"/></a>
-        </div>
-        <div id="hl7-status">
+        {% include fragment-header.html %}
+{% if site.data.info.releaselabel != '' %}
+{% assign status = site.data.info.releaselabel %}
+{% else %}
+{% assign status = site.data.fhir.ig.status %}
+{% endif %}
+        <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">{{site.data.fhir.ig.title}}</span><br/>{{site.data.fhir.ig.version}} - {{status}}</p>
         </div>
       </div> <!-- /container -->
