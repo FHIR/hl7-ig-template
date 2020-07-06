@@ -38,7 +38,7 @@ Usage:
 }
 
 // this can be removed when base template is updated
-
+/*
 #segment-header {
     background-color: var(--ig-header-color);
 }
@@ -54,3 +54,4 @@ Usage:
 #family-nav {
     margin-right: 3px;
 }
+*/
